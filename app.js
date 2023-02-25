@@ -65,8 +65,8 @@ const checkCards = (e) => {
   const clickedCard = e.target;
   clickedCard.classList.add("flipped");
   const flippedCards = document.querySelectorAll(".flipped");
-
   if (flippedCards.length === 2) {
+    console.log( flippedCards[0].getAttribute("name"),flippedCards[1].getAttribute("name"))
     if (
       flippedCards[0].getAttribute("name") ===
       flippedCards[1].getAttribute("name")
@@ -101,6 +101,7 @@ const restart = (text) => {
     cards[index].classList.remove("toggleCard");
     cards[index].style.pointerEvents = "all";
     faces[index].src = item.imgSrc;
+    cards[index].setAttribute('name', item.name)
   });
   flipCount = 0;
   playerFlipCount.textContent = flipCount;
